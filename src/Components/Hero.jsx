@@ -57,7 +57,7 @@ const Hero = () => {
     return (
         <>
             {hero &&
-                <div className="m-2 p-2 w-fit bg-zinc-700 border-3 border-zinc-900 ms-auto">
+                <div className="flex flex-col m-2 p-2 w-fit bg-zinc-700 border-3 border-zinc-900 items-center">
                     <select onChange={(e) => { if (e.target.value === "delete") { deleteHero(); e.target.value = null; } }} className="text-black">
                         <option className="flex ms-auto"></option>
                         <option value={"delete"} className="flex ms-auto">Delete character</option>
@@ -71,7 +71,7 @@ const Hero = () => {
                 </div>
             }
             {!hero &&
-                <div className="flex flex-col gap-2 w-fit m-4">
+                <div className="flex flex-col w-fit bg-zinc-700 border-3 border-zinc-900 p-2 m-2 gap-2 items-center">
                     <label>Hero name:</label>
                     <input className="bg-zinc-900 text-white" type="text" value={heroName} onChange={(e) => setHeroName(e.target.value)}></input>
                     <button onClick={NewHero} className="button button-success">New hero</button>
