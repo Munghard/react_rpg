@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Pixelify Sans", sans-serif;
   line-height: 1.5;
   font-weight: 400;
   color-scheme: light dark;
@@ -21,32 +21,44 @@
   font-style: normal;
 }
 
+.panel {
+  @apply shadow-md shadow-black p-2 gap-2 bg-zinc-700 border-3 border-zinc-900;
+}
+
+.panel-secondary {
+  @apply shadow-md shadow-black p-2 gap-2 bg-zinc-800 border-3 border-zinc-900;
+}
+
 
 .button {
-  @apply text-white rounded-sm px-3 py-2 font-semibold transition-transform duration-150 ease-in-out;
+  @apply text-white px-3 py-2 font-semibold transition-transform duration-150 ease-in-out border-3 w-fit h-fit;
+}
+
+.button:disabled {
+  @apply disabled:bg-zinc-800 disabled:text-zinc-400 disabled:border-zinc-400;
 }
 
 /* variants */
 .button-tags {
-  @apply bg-purple-700/80 border-fuchsia-600 border-2 hover:bg-fuchsia-600 hover:scale-110 active:scale-90;
+  @apply bg-purple-700/80 border-fuchsia-600 hover:bg-fuchsia-600 hover:scale-110 active:scale-90;
 }
 
 .button-danger {
-  @apply bg-rose-700/80 border-pink-600 border-2 hover:bg-rose-600 hover:scale-110 active:scale-90;
+  @apply bg-rose-700/80 border-pink-600 hover:bg-rose-600 hover:scale-110 active:scale-90;
 }
 
 .button-warning {
-  @apply bg-yellow-700/80 border-amber-600 border-2 hover:bg-yellow-600 hover:scale-110 active:scale-90;
+  @apply bg-yellow-700/80 border-amber-600 hover:bg-yellow-600 hover:scale-110 active:scale-90;
 }
 
 .button-primary {
-  @apply bg-blue-700/80 border-cyan-600 border-2 hover:bg-blue-600 hover:scale-110 active:scale-90;
+  @apply bg-blue-700/80 border-cyan-600 hover:bg-blue-600 hover:scale-110 active:scale-90;
 }
 
 .button-success {
-  @apply bg-green-700/80 border-lime-600 border-2 hover:bg-green-600 hover:scale-110 active:scale-90;
+  @apply bg-green-700/80 border-lime-600 hover:bg-green-600 hover:scale-110 active:scale-90;
 }
 
 .button-secondary {
-  @apply bg-zinc-700/80 border-zinc-600 border-2 hover:bg-zinc-600 hover:scale-110 active:scale-90;
+  @apply bg-zinc-800/80 border-zinc-600 hover:bg-zinc-600 hover:scale-110 active:scale-90;
 }
