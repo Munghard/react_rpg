@@ -21,9 +21,9 @@ const ItemList = () => {
 
     return (
         <>
-            <div className="flex flex-col gap-2 items-center">
-                <h1 className="text-5xl">Items</h1>
-                <table className="table border-3 border-zinc-900 text-center min-w-150">
+            <div className="flex flex-col gap-2 items-center w-full m-2">
+                <h1 className="text-5xl">Relics</h1>
+                <table className="table border-3 border-zinc-900 text-center w-full ">
                     <thead className="bg-zinc-700">
                         <tr>
                             <th>#</th>
@@ -35,7 +35,7 @@ const ItemList = () => {
                     <tbody>
                         {Items.map((item, index) =>
                             <tr key={index} className="bg-zinc-800 border-3 border-zinc-900">
-                                <td>{index + 1}# </td>
+                                <td>#{index + 1}</td>
                                 <td>{item.name} </td>
                                 <td>{item.bonusAttack ?? "-"}</td>
                                 <td>{item.bonusDefense ?? "-"} </td>

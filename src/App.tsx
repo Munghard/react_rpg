@@ -5,11 +5,12 @@ import Embark from './Components/Embark'
 import Hero, { HeroData, fetchHero } from './Components/Hero'
 import Navbar from './Components/Navbar'
 import { UserContext } from './Contexts/UserContext'
-import HeroView from './Components/HeroView'
 import Tavern from './Components/Tavern'
 import ItemList from './Components/Items'
+import Maze from './Components/Maze'
+import OpponentSelection from './Components/OpponentSelection'
 
-export type Page = "Hero" | "Tavern" | "Train" | "Embark" | "Trade" | "Craft" | "Friends";
+export type Page = "Hero" | "Maze" | "Tavern" | "Train" | "Embark" | "Trade" | "Craft" | "Friends";
 
 function App() {
 
@@ -31,16 +32,18 @@ function App() {
   return (
     <>
       <Navbar setCurrentPage={setCurrentPage}></Navbar>
-
       <div className='flex m-2 gap-2 justify-center'>
         {currentPage === 'Hero' &&
           <Hero heroData={playerHero}></Hero>
+        }
+        {currentPage === "Maze" &&
+          <Maze></Maze>
         }
         {currentPage === 'Embark' &&
           <Embark></Embark>
         }
         {currentPage === 'Train' &&
-          <Combat></Combat>
+          <OpponentSelection></OpponentSelection>
         }
         {currentPage === 'Tavern' &&
           <Tavern></Tavern>

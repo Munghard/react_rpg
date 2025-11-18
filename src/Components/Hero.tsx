@@ -47,7 +47,6 @@ export const Hero = (heroData: HeroProps) => {
     const [hero, setHero] = useState<HeroData | null>(heroData.heroData);
     const [heroName, setHeroName] = useState(userName || heroData.heroData?.name);
 
-
     const NewHero = async () => {
         if (!userId || !avatarUrl) return null;
         const heroData: HeroData = {
@@ -94,6 +93,8 @@ export const Hero = (heroData: HeroProps) => {
         });
         return () => unsubscribe();
     }, [userId]);
+
+    if (!userId) return (<p>login to see content.</p>);
 
     return (
         <>

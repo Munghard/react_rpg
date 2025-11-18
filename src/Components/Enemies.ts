@@ -1,5 +1,9 @@
 import { HeroData } from "./Hero";
 
+export function getRandomEnemy(): HeroData {
+    return OtherHeros[Math.floor(Math.random() * OtherHeros.length)]
+};
+
 export const OtherHeros: HeroData[] = [
     {
         name: 'Kobold',
@@ -17,9 +21,9 @@ export const OtherHeros: HeroData[] = [
         gold: Math.random() * 200,
         level: 3,
         xp: Math.random() * 70,
-        hp: 95,
+        hp: 300,
         attack: 9,
-        defense: 3,
+        defense: 8,
     },
     {
         name: 'Skeleton Warrior',

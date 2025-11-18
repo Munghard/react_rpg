@@ -12,6 +12,7 @@ const Tavern = () => {
         const heroSnaps = await getDocs(heroesCollection);
 
         const heroes: HeroData[] = heroSnaps.docs.map(doc => doc.data() as HeroData);
+        heroes.sort((a, b) => a.xp - b.xp);
         setHeroes(heroes);
     }
 
@@ -20,9 +21,10 @@ const Tavern = () => {
     }, [])
 
     return (
-        <div className="flex flex-col gap-2 items-center">
-            <h1 className="text-5xl">Leaderboard</h1>
-            <table className="table border-3 border-zinc-900 text-center min-w-150 ">
+        <div className="flex flex-col gap-2 items-center w-full m-2">
+            <h1 className="text-5xl text-zinc-300">Tavern</h1>
+            <p className="text-xl text-zinc-400">Leaderboard</p>
+            <table className="border-3 border-zinc-900 text-center w-full ">
                 <thead className="bg-zinc-700">
                     <tr>
                         <th>Placing</th>
@@ -36,12 +38,12 @@ const Tavern = () => {
                 <tbody>
                     {heroes.map((hero, index) =>
                         <tr key={hero.userId} className="bg-zinc-800 border-3 border-zinc-900">
-                            <td>{index + 1}# </td>
+                            <td>#{index + 1}</td>
                             <td><img className="w-10 h-10 rounded-full mx-auto" src={hero.avatarUrl}></img></td>
-                            <td>{hero.name} </td>
-                            <td> {hero.level}</td>
-                            <td> {hero.xp.toFixed(1)} </td>
-                            <td> {hero.gold.toFixed(1)}</td>
+                            <td>{hero.name}</td>
+                            <td>{hero.level}</td>
+                            <td>{hero.xp.toFixed(1)} </td>
+                            <td>{hero.gold.toFixed(1)}</td>
                         </tr>
                     )}
                 </tbody>
